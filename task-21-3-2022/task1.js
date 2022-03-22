@@ -12,7 +12,10 @@ Correct the syntax error
  'the','fox' 'over' lazy, 'dog',  ]
 
 */  
-// answer: [1,7,9,45]   ["Str" "alex","moh",'the','fox','over','lazy,'dog']
+ answer: 
+  [1,7,9,45]  
+  ["Str","alex","moh"]
+  ['the','fox','over','lazy','dog']
 
 
 /*
@@ -21,7 +24,9 @@ What the index of "Banana","Tomato"
 var fruits=["Tomato","Banana","Watermelon"]
 
 */
- //answer: banana in index 1 , Tomato in index 0
+ answer:
+  // banana in index 1  
+  // Tomato in index 0
 
 
 /*
@@ -277,7 +282,18 @@ Ex: oddArray(nums) => [1,3,9]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+var nums= [1,2,3,8,9]
+function oddArray(p1){
+  index=0;
+  let odd=[];
+ for(let i = 0; i<nums.length; i++){
+     if (nums[i] % 2 != 0){
+     odd[index]=nums[i];
+      index++;
+     } 
+   } return odd;
+} 
+console.log(oddArray(nums));
 
 /*
 17
@@ -294,7 +310,19 @@ Ex: aveArray(nums) => 16.6
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+var nums= [1,2,3,8,9];
+var nums2= [1,2,3,8,9,77];
+function aveArray(p2){
+let sum=0;
+for (i=0 ; i<p2.length;i++)
+{
+ sum += p2[i];
+}
+let avg =sum/p2.length;
+return avg;
+}
+console.log(aveArray(nums2));
+console.log(aveArray(nums));
 
 /*
 18
@@ -308,7 +336,25 @@ Ex: shorterInArray(strings) => "alex"
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+function shorterInArray(strings){
+  min = strings[0].length;
+  let index = 0;
+  let count = 0;
 
+  for(let i = 1; i < strings.length ; i++){
+      count = strings[i].length;
+      if(count < min){
+          min = count;
+          index = i;
+      }
+  }
+  return index;
+
+}
+strings= ["alex","mercer","madrasa","rashed2","emad","hala"]
+
+shorterInArray(strings)
+console.log(strings[shorterInArray(strings)])
 
 /*
 19
@@ -323,7 +369,18 @@ Ex: repeatChar(string,"z") => 0
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+var string= "alex mercer madrasa rashed2 emad hala";
+let arr= 0;
+function repeatChar(s,ch){
+for (i=0 ; i<string.length ;i++)
+{
+if (string[i]==ch)
+   {
+   arr++;
+   }
+} return arr;
+}
+console.log(repeatChar(string,"r"));
 
 /*
 20
@@ -337,7 +394,21 @@ Ex: evenIndexOddLength(strings) => ["madrasa"]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+var strings= ["alex","mercer","madrasa","rashed2","emad","hala"];
+function evenIndexOddLength(p1){
+    var oddeven =[];
+    var index =0;
+  for (let i=0 ; i<p1.length ; i++)
+  {
+    if ( (p1[i].length % 2 != 0) && ((i % 2) ==0) )
+    {
+     oddeven[index] = p1[i];
+     index++;
+    }
 
+  } return oddeven;
+}
+console.log(evenIndexOddLength(strings));
 
 /*
 21
@@ -351,8 +422,16 @@ Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
-
+var nums= [44, 5, 4, 3, 2, 10];
+function powerElementIndex(p1){
+var p =[];
+for(let i = 0 ; i < p1.length;i++)
+   {
+    p[i] =Math.pow(p1[i],i);
+     } 
+     return p;
+}
+console.log(powerElementIndex(nums));
 /*
 22
 Create a function called evenNumberEvenIndex
@@ -365,3 +444,18 @@ Ex: evenNumberEvenIndex(nums) => [2,8,34]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+var nums= [5,2,2,1,8,66,55,77,34,9,55,1];
+function evenNumberEvenIndex(p1){
+  var even =[];
+  var index =0;
+for (let i=0 ; i<p1.length ; i++)
+{
+  if ( (p1[i] % 2 == 0) && ((i % 2) ==0) )
+  {
+   even[index] = p1[i];
+   index++;
+  }
+
+} return even;
+}
+console.log(evenNumberEvenIndex(nums));
