@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>
+
+    </title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+
+    <style>
+    span{
+        color: red;
+
+    } 
+    #btn{
+        display: none;
+    }
+    </style>
 </head>
+
 <body>
-  <label>Pasword :</label>  
-  <input type="password" class="p1" onchange="pass()">
-  <span class="err"></span> 
-  <label>Repeat :</label> 
-  <input type="password" class="p1">
-  <span class="err"></span>
+    
+        <label>Password (min 6 chars) :</label>
+        <input type="password" class="pass" onchange="checkpass()">
+        <span class="err"></span>
+        <br><br>
+        <label> Repeat Password :</label> 
+        <input type="password" class="pass" onchange="checkpass()" style="margin-left: 40px;">
+        <span class="err"></span>
+
+        <button type="submit" id="btn" >Submit</button>
+   
     <script>
-let x = document.getElementsByClassName('p1');
-function pass(){
-    let pas1=p1[0].value;
+       
+       let x = document.getElementsByClassName('pass');
+       let err = document.getElementsByClassName('err');
+       let btn = document.getElementById('btn');
+       function checkpass()
+       {
+        let pas1=x[0].value;
+        let pas2=x[1].value;
 
 
-}
+           if(pas1.length<6)
+           {
+              err[0].innerHTML="Too short";
+           }
+           else {
+            err[0].innerHTML="";  
+           }
+           if(pas1 == pas2)
+           { 
+               err[1].innerHTML="";
+               btn.style.display="block"
+           }
+           else{
+            err[1].innerHTML="password do not match";
+           }
+
+
+           }
+           
+       
     </script>
 </body>
+
 </html>
