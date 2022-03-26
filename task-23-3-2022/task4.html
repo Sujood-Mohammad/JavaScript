@@ -24,6 +24,17 @@
                      <option value="20px">20px</option>
           
         </select>
+        <label for="italic" id="italic" onclick="myFunction()" >
+            <input type="checkbox" id="accept" name="italic"> Italic </label>
+        
+            <label for="Bold ">
+                <input type="checkbox" id="accept" name="italic" onclick=myFunctionb() > Bold </label>
+        
+                <label for="italic">
+                    <input type="checkbox" id="accept" name="italic" onclick= myFunctionU()> Underline </label>     
+        
+            <div id="demo" style="border:solid black; height: 100px; width: 500px; padding: 10px; margin-top: 10px;">the quick brown fox over the lazy dog</div>
+
   
     <script>
         var changeFontSize = function (font) {
@@ -38,25 +49,7 @@
             function myFunctionb() { document.getElementById("demo").style.fontWeight= "bold";}
             function myFunctionU() { document.getElementById("demo").style.textDecoration = "underline";}
 
-    </script>
-
-
-
-
-
-
-
-<label for="italic" id="italic" onclick="myFunction()" >
-    <input type="checkbox" id="accept" name="italic"> Italic </label>
-
-    <label for="Bold ">
-        <input type="checkbox" id="accept" name="italic" onclick=myFunctionb() > Bold </label>
-
-        <label for="italic">
-            <input type="checkbox" id="accept" name="italic" onclick= myFunctionU()> Underline </label>     
-
-    <div id="demo" style="border:solid black; height: 100px; width: 500px;">the quick brown fox over the lazy dog</div>
-   
+    </script>   
 
 
 </body>

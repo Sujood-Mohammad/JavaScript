@@ -12,10 +12,10 @@ Correct the syntax error
  'the','fox' 'over' lazy, 'dog',  ]
 
 */  
- answer: 
-  [1,7,9,45]  
-  ["Str","alex","moh"]
-  ['the','fox','over','lazy','dog']
+//  answer: 
+//   [1,7,9,45]  
+//   ["Str","alex","moh"]
+//   ['the','fox','over','lazy','dog']
 
 
 /*
@@ -24,7 +24,7 @@ What the index of "Banana","Tomato"
 var fruits=["Tomato","Banana","Watermelon"]
 
 */
- answer:
+ //  answer:
   // banana in index 1  
   // Tomato in index 0
 
@@ -36,7 +36,7 @@ Create an array represents your:
 2- Favorite Sport (3)
 3- Favorite Movie (4)
 */ 
-let fav=[mansaf,football,action];
+let fav=['mansaf','football','action'];
 
 
 /*
@@ -48,11 +48,12 @@ and return the first element in an array
 Ex: firstOfArray([1,4,5]) => 1
 Ex: firstOfArray(["t","u","g","x"]) => "t"
 */
- function firstOfArray(){
-     arr=[1,4,5,10];
-     return arr[0];
+function firstOfArray(arr){
+  return arr[0];
 }
-firstOfArray();
+console.log(firstOfArray([1,4,5]));
+console.log(firstOfArray(["t","u","g","x"]));
+
 
 /*
 5
@@ -63,11 +64,11 @@ and return the first element in an array
 Ex: lastOfArray([1,4,5]) => 5
 Ex: lastOfArray(["t","u","g","x"]) => "x"
 */
-function lastOfArray(){
-    arr=[1,4,5,10];
-    return arr[length-1];
+function lastOfArray(arr){
+  return arr[arr.length-1];
 }
-lastOfArray();
+console.log(lastOfArray([1,4,5]));
+console.log(lastOfArray(["t","u","g","x"]));
 /*
 6
 Using console make this array to be like this one (push, unshift, shift, pop)
