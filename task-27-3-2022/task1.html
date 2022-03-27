@@ -24,7 +24,7 @@
                         <label><b>Birth Date :</b></label><br>
                         <input type="date" id="inp4"><br>
                         <label><b>Your Image :</b></label><br>
-                        <input type="file" id="img">
+                        <input type="text" id="img">
                 </div>
                 <div>
                         <label><b>Description :</b></label> <br>
@@ -49,14 +49,14 @@
     </div>
 </form>
 <div style="display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 20px 20px;  " >
-<div id="first" style="border: 2px brown solid; padding: 10px;">
+<div id="first" style="border: 2px black solid; padding: 10px; background-color: darkcyan; color: white;">
 <h6 id="s1"></h6>
 <h6 id="s2"></h6>
 <h6 id="s3"></h6>
 <h6 id="s4"></h6>
 <img src="" id="im2">
 </div>
-<div id="second" style="border: 2px brown solid; padding: 10px;">
+<div id="second" style="border: 2px black solid; padding: 10px; background-color:darkcyan; color: white;">
 <h6 id="s5"></h6>
 <h6 id="s6"></h6>
 <ul>
@@ -65,7 +65,7 @@
         <li id="l3"></li>
 </ul>
 </div>
-<div id="third" style="border: 2px brown solid; padding: 10px;">
+<div id="third" style="border: 2px black solid; padding: 10px; background-color:darkcyan; color: white;">
 <h6 id="s8"></h6>
 <h6 id="s9"></h6>
 </div>
@@ -110,7 +110,7 @@ document.getElementById('s1').innerHTML="My name is "+localStorage.getItem('Name
 document.getElementById('s2').innerHTML=localStorage.getItem('Age') + " year's old";
 document.getElementById('s3').innerHTML=localStorage.getItem('Gender');
 document.getElementById('s4').innerHTML=localStorage.getItem('Birth Date');
-document.getElementById('im2').innerHTML=localStorage.getItem('My Image') ;       
+document.getElementById('im2').src="My Img " +localStorage.getItem('My Image') ;       
 document.getElementById('s5').innerHTML=localStorage.getItem('Description');
 document.getElementById('s6').innerHTML=localStorage.getItem('major & university');
 document.getElementById('l1').innerHTML=localStorage.getItem('HTML') +" HTML";
