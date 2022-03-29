@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <select class="form-control" id="char" style="margin-top: 20px;">
+            <option>please select</option>
+        </select> <br>
+        <div id="sasa" style="font-style: italic;"></div>
+    </div>
+</body>
+<script>
+    async function loadData(){
+        const res = await fetch('https://www.breakingbadapi.com/api/characters');
+        const data = await res.json();
+
+        for (let i=0 ; i<data.length ;i++){
+            document.getElementById('char').innerHTML += " <option> " + data[i].name + " </option> ";
+        }
+        document.getElementById('char').onchange =function(){
+            for(let j=0 ;j<data.length ;j++){
+                if (data[j].name == document.getElementById('char').value){
+                    document.getElementById('sasa').innerHTML = data[j].nickname;
+                    document.getElementById('sasa').style.border ='5px solid brown';
+                    document.getElementById('sasa').style.height='100px';
+                    document.getElementById('sasa').style.padding='20px'
+                }
+            }
+
+        }
+    }
+    loadData();
+</script>
+</html>

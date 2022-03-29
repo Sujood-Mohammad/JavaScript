@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" id="c">
+
+
+    <script>
+        let x = document.getElementById('c');
+        x.onchange = function(){
+            localStorage.setItem('col',x.value);
+            document.body.style.background = localStorage.getItem('col');
+        }
+        if (localStorage.getItem('col') != null){
+            document.body.style.background = localStorage.getItem('col');
+            x.value=localStorage.getItem('col');
+        }
+    </script>
+</body>
+</html>
