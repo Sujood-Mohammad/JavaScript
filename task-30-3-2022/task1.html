@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         input{
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+            <label for="f">Enter a Fname: </label> <br>
+            <input id="fname" type="text" name="fname"/>
+            <span id="fn"></span>
+        <br>
+            <label for="l">Enter a Lname: </label> <br>
+            <input id="lname" type="text" name="lname"/>
+            <span id="ln"></span>
+        <br>
+            <label for="b">Enter a Bdate: </label><br>
+            <input id="birthday" name="birthday" type="text"/>
+            <span id="bdate"></span>
+        <br>
+            <label for="email">Enter an email: </label><br>
+            <input id="email" name="email" type="text"/>
+            <span id="e"></span>
+        <br>
+            <label for="cemail">Confirm Email:</label> <br>
+            <input type="text" id="cemail" name="cemail">
+            <span id="cem"></span>
+        <br>
+            <label for="password">Password:</label> <br>
+            <input type="password" id="password" name="password"> 
+            <span id="pas"></span> <br>
+            <label for="cpassword">Confirm password:</label><br>
+            <input type="password" id="cpassword" name="cpassword">
+            <span id="cpas"></span> <br>
+       
+    </div>
+    
+
+<script>
+
+document.getElementById("fname").addEventListener('change' , function(){
+    fname = this.value;
+    regexp = /\d/ig;
+    result = regexp.test(fname);
+    if(result == true){
+        document.getElementById("fn").style.color = "red";
+        document.getElementById("fn").innerHTML = "Numbers are not allow";
+    }else{
+        document.getElementById("fn").innerHTML = "";
+    }
+});
+
+
+document.getElementById("lname").addEventListener('change' , function(){
+    lname = this.value;
+    regexp = /\d/ig;
+    result = regexp.test(lname);
+    if(result == true){
+        document.getElementById("ln").style.color = "red";
+        document.getElementById("ln").innerHTML = "Numbers are not allow";
+    }else{
+        document.getElementById("ln").innerHTML = "";
+    }
+});
+
+document.getElementById("birthday").addEventListener('change' , function(){
+    birthday = this.value;
+    regexp =  /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
+
+    result = regexp.test(birthday);
+   
+    if(result == false){
+        document.getElementById("bdate").style.color = "red";
+        document.getElementById("bdate").innerHTML = "The format should be dd/mm/yyyy";
+    }else{
+        document.getElementById("bdate").innerHTML = "";
+    }
+    if(birthday == "")
+        document.getElementById("bdate").innerHTML = "";
+    
+});
+
+
+document.getElementById("email").addEventListener('change' , function(){
+    email = this.value;
+    regexp =  /^[a-zA-Z]+[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i;
+
+    result = regexp.test(email);
+   
+    if(result == false){
+        document.getElementById("e").style.color = "red";
+        document.getElementById("e").innerHTML = "The e-mail is not valid";
+    }else{
+        document.getElementById("e").innerHTML = "";
+    }
+    if(email == "")
+        document.getElementById("e").innerHTML = "";
+    
+});
+
+
+document.getElementById("cemail").addEventListener('change' , function(){
+    result = document.getElementById("email").value == this.value;
+    
+    if(result){
+        document.getElementById("cem").innerHTML = "";
+    }else{
+        document.getElementById("cem").style.color = "red";
+        document.getElementById("cem").innerHTML = "The e-mail is dosn't match";
+    }
+
+    if(document.getElementById("cemail").value == "")
+        document.getElementById("cem").innerHTML = "";
+});
+
+
+document.getElementById("password").addEventListener('change' , function(){
+    password = this.value;
+    check =  /\b^([A-Z])/;
+    if(check.test(password)){
+        check = /[0-9].*[0-9]/;
+        if(check.test(password)){
+            check = /[?=.*[\]\\{}!@#$%^&*]/;
+            if(check.test(password)){
+                console.log(password);
+                document.getElementById("pas").innerHTML = "";
+            }else{
+                document.getElementById("pas").style.color = "red";
+        document.getElementById("pas").innerHTML = "the password must have at least one symbol";
+            }
+        }else{
+            document.getElementById("pas").style.color = "red";
+        document.getElementById("pas").innerHTML = "the password must have at least two numbers";
+        }
+    }else{
+        document.getElementById("pas").style.color = "red";
+        document.getElementById("pas").innerHTML = "the first letter must be uppercase";
+    }
+    
+    if(password == ""){
+
+        document.getElementById("pas").innerHTML = ""; 
+    }
+    
+});
+
+
+document.getElementById("cpassword").addEventListener('change' , function(){
+    result = document.getElementById("password").value == this.value;
+    if(result){
+        document.getElementById("cpas").innerHTML = "";
+    }else{
+        document.getElementById("cpas").style.color = "red";
+        document.getElementById("cpas").innerHTML = "The password donsn't match";
+    }
+
+    if(document.getElementById("cpassword").value == "")
+        document.getElementById("cpas").innerHTML = "";
+});
+
+
+
+
+
+</script>
+</body>
+</html>
